@@ -6,6 +6,7 @@ while read -r line; do {
         fi
         break
     fi
-    VAR="$VAR $'\n' $line"
+    VAR+="$line"
+    VAR+=$'\n'
 }; done < changelog.txt
 echo $VAR
