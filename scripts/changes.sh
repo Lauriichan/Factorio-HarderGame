@@ -7,7 +7,7 @@ while read -r line; do {
         echo $VAR
         return
     fi
-    VAR=$VAR + '\n' + $line
+    VAR="$VAR \n $line"
 }; done < changelog.txt
 echo $VAR
 return
