@@ -29,13 +29,13 @@ jobs:
       # Build zip file from Release version
       - name: Build zip file
         run: |
-          chmod +x "build.sh"
-          ./build.sh ${{secrets.MOD_NAME}} ${{env.RELEASE_VERSION}}
+          chmod +x "scripts/build.sh"
+          ./scripts/build.sh ${{secrets.MOD_NAME}} ${{env.RELEASE_VERSION}}
       # Changes
       - name: Extract changes from Changelog
         run: |
-          chmod +x "changes.sh"
-          echo "CHANGES=./changes.sh" >> $GITHUB_ENV
+          chmod +x "scripts/changes.sh"
+          echo "CHANGES=./scripts/changes.sh" >> $GITHUB_ENV
       # Release project
       - name: Release
         uses: softprops/action-gh-release@v1
@@ -44,4 +44,4 @@ jobs:
           body: ${{env.CHANGES}}
           token: ${{ secrets.GITHUB_TOKEN }}
           files: |
-            ${{secrets.MOD_NAME}}-${{env.RELEASE_VERSION}}.zip
+            ${{secrets.MOD_NAME}}_${{env.RELEASE_VERSION}}.zip
