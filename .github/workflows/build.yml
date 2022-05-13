@@ -30,10 +30,10 @@ jobs:
       - name: Build zip file
         run: |
           chmod +x "build.sh"
-          ./build.sh ${{env.MOD_NAME}} ${{env.RELEASE_VERSION}}
+          ./build.sh ${{secrets.MOD_NAME}} ${{env.RELEASE_VERSION}}
       # Release project
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          body_path: ${{env.MOD_NAME}}-${{env.RELEASE_VERSION}}.zip
+          body_path: ${{secrets.MOD_NAME}}-${{env.RELEASE_VERSION}}.zip
