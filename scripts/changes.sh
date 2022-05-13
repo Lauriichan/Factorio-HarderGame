@@ -1,6 +1,6 @@
 VAR=
 while read -r line; do {
-    if [[ "$line" == \-+ ]]; then
+    if [[ "$line" == ---* ]]; then
         if [ $VAR == "" ]; then 
             continue;
         fi
