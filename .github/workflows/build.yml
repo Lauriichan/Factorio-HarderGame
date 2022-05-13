@@ -31,10 +31,16 @@ jobs:
         run: |
           chmod +x "build.sh"
           ./build.sh ${{secrets.MOD_NAME}} ${{env.RELEASE_VERSION}}
+      # Changes
+      - name: Extract changes from Changelog
+        run: |
+          chmod +x "changes.sh"
+          ./changes.sh
       # Release project
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          body_path: ${{secrets.MOD_NAME}}-${{env.RELEASE_VERSION}}.zip
           token: ${{ secrets.GITHUB_TOKEN }}
+          files: |
+            ${{secrets.MOD_NAME}}-${{env.RELEASE_VERSION}}.zip
