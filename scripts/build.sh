@@ -6,4 +6,5 @@ rm -f tmp/.gitignore
 move tmp/ $1/
 rm -f -r tmp/
 zip $1_$2.zip -r $1/
+echo "$1_$2.zip"
 rm -f -r $1/
