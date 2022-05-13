@@ -1,0 +1,16 @@
+{
+    "name": "HarderGame",
+    "version": "1.0.0",
+    "factorio_version": "1.1",
+    "title": "Harder Game",
+    "author": "Lauriichan",
+    "contact": "https://discord.gg/m9vjsj6ScJ",
+    "homepage": "https://github.com/Lauriichan/Factorio-HarderGame",
+    "description": "Game with no resources on the map and advanced enemies",
+    "dependencies": [
+        "DeepMine",
+        "StoneWaterWell",
+        "Rampant",
+        "? Clockwork"
+    ]
+}
