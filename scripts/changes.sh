@@ -9,3 +9,5 @@ while read -r line; do {
     fi
     VAR=$VAR + '\n' + $line
 }; done < changelog.txt
+echo $VAR
+return
