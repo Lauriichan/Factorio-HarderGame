@@ -35,12 +35,13 @@ jobs:
       - name: Extract changes from Changelog
         run: |
           chmod +x "changes.sh"
-          ./changes.sh
+          echo "CHANGES=./changes.sh" >> $GITHUB_ENV
       # Release project
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
+          body: ${{env.CHANGES}}
           token: ${{ secrets.GITHUB_TOKEN }}
           files: |
             ${{secrets.MOD_NAME}}-${{env.RELEASE_VERSION}}.zip
