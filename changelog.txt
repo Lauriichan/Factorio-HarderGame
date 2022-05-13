@@ -1,6 +1,16 @@
 -----------------------------
-Version: 1.0.0.0
+Version: 1.0.0
 Changes:
-  - Test changes
-  - We like tests
+  - Changed crafting recipe for DeepMine
+  - Removed DeepMine technology
+  - Split up DeepMine 2 technology into resource technologies
+  - Edit cost of DeepMine 2 technology
+  - Remove all resource fields except for fluids on map 
+  - Edit Start items
+  - Added ability to craft DeepMine
+Dependencies:
+  - Added DeepMine
+  - Added StoneWaterWell
+  - Added Rampant
+  - Added Clockwork (optional)
 -----------------------------
