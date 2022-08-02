@@ -28,6 +28,12 @@ recipe.ingredients = {
 }
 recipe.enabled = true
 
+
+data.raw["recipe"]["inserter"].ingredients = {
+    {"burner-inserter", 1},
+    {"electronic-circuit", 1}
+}
+
 local tech = data.raw["technology"]["deep-mine"]
 tech.hidden = true
 tech.enabled = true

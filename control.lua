@@ -21,6 +21,7 @@ function update_player(player)
 		inventory.insert{name = "boiler", count = 1}
 		inventory.insert{name = "steam-engine", count = 2}
 		inventory.insert{name = "small-electric-pole", count = 2}
+		inventory.insert{name = "small-electric-pole", count = 2}
 	end
 	table.insert(global.players, player)
 end
@@ -52,7 +53,7 @@ end
 
 function on_mod_init()
 	on_data_init()
-	on_init_mod_support()
+	on_init_mod_support(global)
 	if remote.interfaces["freeplay"] then
 		remote.call("freeplay", "set_disable_crashsite", true)
 		remote.call("freeplay", "set_skip_intro", true)
